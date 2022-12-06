@@ -60,4 +60,4 @@ module Generator where
             sent <- sentence
             return (nphrase ++ " " ++ vphrase ++ " " ++ conj ++ " " + sent)
         else do 
-            return phrase
+            return (nphrase ++ " " ++ vphrase)
