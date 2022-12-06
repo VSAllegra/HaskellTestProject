@@ -39,17 +39,22 @@ module Generator where
     prepositional_phrase :: IO String
     prepositional_phrase = do 
         prep <- pickRandom prepostions
-        return (prep ++ " " ++ noun_phrase)
+        phrase <- noun_phrase
+        return (prep ++ " " ++ phrase)
     
     verb_phrase  :: IO String
     verb_phrase = do 
         verb <- pickRandom verbs
-        return (verb ++ " " ++ noun_phrase ++ " " ++ prepositional_phrase)
+        nphrase <- noun_phrase
+        pphrase <- prepositional_phrase
+        return (verb ++ " " ++ nphrase ++ " " ++ pphrase)
 
 
     sentence :: IO String
     sentence = do 
-        phrase <- noun_phrase ++ " " ++ verb_phrase
+        nphrase <- noun_phrase
+        vphrase <- verb_phrase
+        phrase <- nphrase ++ " " ++ vphrase
         prob <- probability 0.25
         if prob then do
             conj <- pickRandom conjunctions
