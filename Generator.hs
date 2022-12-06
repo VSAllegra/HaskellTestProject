@@ -33,8 +33,9 @@ module Generator where
             if prob then do
                 phrase <- adjective_phrase
                 return (art ++ " " ++ phrase)
-            noun <- pickRandom nouns
-            return (art ++ " " ++ noun)
+            else do 
+                noun <- pickRandom nouns
+                return (art ++ " " ++ n)
 
     prepositional_phrase :: IO String
         prepositional_phrase = do 
@@ -54,5 +55,6 @@ module Generator where
                 conj <- pickRandom conjunctions
                 sent <- sentence
                 return (phrase ++ " " ++ conj ++ " " + sent)
-            noun <- pickRandom nouns
-            return (art ++ " " ++ noun)
+            else do 
+                noun <- pickRandom nouns
+                return (art ++ " " ++ noun)
