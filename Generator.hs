@@ -54,7 +54,7 @@ module Generator where
     sentence = do 
         nphrase <- noun_phrase
         vphrase <- verb_phrase
-        phrase <- (nphrase ++ " " ++ vphrase)
+        phrase <- nphrase ++ " " ++ vphrase
         prob <- probability 0.25
         if prob then do
             conj <- pickRandom conjunctions
