@@ -50,10 +50,10 @@ module Generator where
     sentence :: IO String
     sentence = do 
         phrase <- noun_phrase ++ " " ++ verb_phrase
+        prob <- probability 0.25
         if prob then do
             conj <- pickRandom conjunctions
             sent <- sentence
             return (phrase ++ " " ++ conj ++ " " + sent)
         else do 
-            noun <- pickRandom nouns
-            return (art ++ " " ++ noun)
+            return phrase
