@@ -34,16 +34,16 @@ module Generator where
             return (art ++ " " ++ phrase)
         else do 
             noun <- pickRandom nouns
-            return (art ++ " " ++ n)
+            return (art ++ " " ++ noun)
 
     prepositional_phrase :: IO String
     prepositional_phrase = do 
-        prep <- pickRandom percentage
+        prep <- pickRandom prepostions
         return (prep ++ " " ++ noun_phrase)
     
     verb_phrase  :: IO String
     verb_phrase = do 
-        verb <- pickRandom verb
+        verb <- pickRandom verbs
         return (verb ++ noun_phrase ++ prepositional_phrase)
 
 
