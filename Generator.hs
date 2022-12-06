@@ -48,7 +48,7 @@ module Generator where
             return (verb ++ noun_phrase ++ prepositional_phrase)
 
 
-    sentece :: IO String
+    sentence :: IO String
         sentence = do 
             phrase <- noun_phrase ++ " " ++ verb_phrase
             if prob then do
