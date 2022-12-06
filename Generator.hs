@@ -29,11 +29,11 @@ module Generator where
     noun_phrase = do
         art  <- pickRandom articles
         prob <- probability 0.25
+        noun <- pickRandom nouns
         if prob then do
             phrase <- adjective_phrase
-            return (art ++ " " ++ phrase)
+            return (art ++ " " ++ phrase ++ " " ++ noun)
         else do 
-            noun <- pickRandom nouns
             return (art ++ " " ++ noun)
 
     prepositional_phrase :: IO String
