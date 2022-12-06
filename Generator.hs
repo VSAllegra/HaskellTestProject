@@ -58,6 +58,6 @@ module Generator where
         if prob then do
             conj <- pickRandom conjunctions
             sent <- sentence
-            return (nphrase ++ " " ++ vphrase ++ " " ++ conj ++ " " + sent)
+            return (nphrase ++ " " ++ vphrase ++ " " ++ conj ++ " " ++ sent)
         else do 
             return (nphrase ++ " " ++ vphrase)
