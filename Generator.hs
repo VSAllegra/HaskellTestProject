@@ -44,7 +44,7 @@ module Generator where
     verb_phrase  :: IO String
     verb_phrase = do 
         verb <- pickRandom verbs
-        return (verb ++ noun_phrase ++ prepositional_phrase)
+        return (verb ++ " " ++ noun_phrase ++ " " ++ prepositional_phrase)
 
 
     sentence :: IO String
